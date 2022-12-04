@@ -1,8 +1,7 @@
 //! The simple example on tkrzw's website
 
 const std = @import("std");
-const tkrzw = @import("tkrzw.zig");
-const HashDBM = tkrzw.DBM;
+const tkrzw = @import("tkrzw");
 
 pub fn print_value(dbm: tkrzw.DBM, key: []const u8) void {
   if (dbm.get(key)) |value| {
@@ -14,7 +13,7 @@ pub fn print_value(dbm: tkrzw.DBM, key: []const u8) void {
 }
 
 pub fn main() !void {
-  var dbm = HashDBM.open("casket.tkh", true, "") orelse return error.DBMOpenError;
+  var dbm = tkrzw.DBM.open("casket.tkh", true, "") orelse return error.DBMOpenError;
   defer _ = dbm.close();
 
   _ = dbm.set("foo", "hop", false);
