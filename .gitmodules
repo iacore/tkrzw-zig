@@ -1,0 +1,3 @@
+[submodule "tkrzw"]
+	path = tkrzw
+	url = https://github.com/estraier/tkrzw
